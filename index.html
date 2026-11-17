@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SumBook — bitirdiğin kitaplar için sessiz bir defter</title>
+  <meta name="description" content="Okurken kalemle çiz, bitirince buraya gel. SumBook, bitirdiğin kitaplar için sessiz bir okuma defteri. Beğeni yok, takipçi yok, hedef yok.">
+  <meta name="theme-color" content="#F5EFE4" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1A1714" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="SumBook — bitirdiğin kitaplar için sessiz bir defter">
+  <meta property="og:description" content="Okurken kalemle çiz, bitirince buraya gel. Beğeni yok, takipçi yok, hedef yok.">
+  <meta property="og:image" content="media/kalem-poster.jpg">
+  <link rel="icon" href="media/icon.png">
+  <link rel="apple-touch-icon" href="media/icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="media/icon.png" alt="">SumBook</a>
+      <nav><a href="destek.html">Destek</a><a href="gizlilik.html">Gizlilik</a></nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <h1>Okurken kalemle çiz.<br>Bitirince buraya gel.</h1>
+        <p class="lead">SumBook, bitirdiğin kitaplar için sessiz bir defter. Aklında kalanı yaz, altını çizdiğin cümleyi sakla; not kendi kendine kalemle yazılsın. Beğeni yok, takipçi yok, hedef yok.</p>
+
+        <p class="form-note">Yakında App Store ve Google Play'de.</p>
+      </div>
+
+      <div class="phone">
+        <video id="demo" src="media/kalem.mp4" poster="media/kalem-poster.jpg" autoplay muted loop playsinline preload="metadata"
+               aria-label="SumBook'ta bir not, dolma kalemle kendi kendine yazılıyor"></video>
+      </div>
+    </section>
+
+    <div class="shelf" aria-hidden="true">
+      <span style="--w:22px;--h:70px;--c:#2F4A5A"></span><span style="--w:28px;--h:82px;--c:#4B5D45"></span><span style="--w:18px;--h:64px;--c:#8C3B2E"></span><span style="--w:30px;--h:74px;--c:#E3D7C3"></span><span style="--w:20px;--h:86px;--c:#1F2A33"></span><span style="--w:26px;--h:68px;--c:#C9A66B"></span><span style="--w:34px;--h:78px;--c:#B5654A"></span><span style="--w:20px;--h:72px;--c:#7E8C7A"></span><span style="--w:24px;--h:84px;--c:#5A3D55"></span>
+    </div>
+    <div class="board" aria-hidden="true"></div>
+
+    <section class="features">
+      <div>
+        <h3>Rafın dolar</h3>
+        <p>Bitirdiğin her kitap rafına düşüp yerine oturur. Aylar geçtikçe kendi kitaplığın kurulur. Barkodu okut ya da adını yaz, yeter.</p>
+      </div>
+      <div>
+        <h3>Kalemle yazılır <span class="tag">Pro</span></h3>
+        <p>Notunu bitirdiğinde dolma kalem, kurşun kalem ya da daktiloyla kendi kendine yazılır. Pro'da reklam da yok.</p>
+      </div>
+      <div>
+        <h3>Sadece senin</h3>
+        <p>Hesap yok, beğeni yok, takipçi yok. Yazdıkların telefonunda ve kendi yedeğinde kalır; biz göremeyiz.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav><a href="destek.html">Destek</a><a href="gizlilik.html">Gizlilik</a></nav>
+      <span>© 2026 SumBook</span>
+    </div>
+  </footer>
+
+  <script>
+    // Respect "reduce motion": show the finished note instead of the animation.
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const video = document.getElementById("demo");
+      video.removeAttribute("autoplay");
+      video.pause();
+    }
+  </script>
+</body>
+</html>

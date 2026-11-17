@@ -1,0 +1,109 @@
+/* SumBook site — same paper & ink palette as the app. Fonts are self-hosted (no Google Fonts requests). */
+@font-face { font-family: "Jakarta"; src: url("fonts/PlusJakartaSans-SemiBold.ttf") format("truetype"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Jakarta"; src: url("fonts/PlusJakartaSans-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Newsreader"; src: url("fonts/Newsreader.ttf") format("truetype"); font-weight: 400 600; font-display: swap; }
+
+:root {
+  --paper: #F5EFE4;
+  --paper-raised: #FBF7F0;
+  --ink: #2A251F;
+  --muted: #685E52;
+  --line: #DCD2C2;
+  --fill: #EAE2D4;
+  --accent: #8C3B2E;
+  --board: #CDBFA8;
+  --button-ink: #F5EFE4;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #1A1714;
+    --paper-raised: #24201C;
+    --ink: #EDE6DA;
+    --muted: #A89E90;
+    --line: #3A332C;
+    --fill: #2E2924;
+    --accent: #C9A66B;
+    --board: #3A322A;
+    --button-ink: #1A1714;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 18px/1.6 "Newsreader", "New York", Georgia, serif;
+}
+a { color: inherit; text-underline-offset: 3px; text-decoration-color: var(--line); }
+a:hover { text-decoration-color: currentColor; }
+
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+.narrow { max-width: 680px; }
+
+/* Header */
+.site-header { padding: 22px 0; }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font: 700 19px/1 "Jakarta", system-ui, sans-serif; letter-spacing: -0.01em; }
+.brand img { width: 30px; height: 30px; border-radius: 7px; }
+.site-header nav a { font: 600 15px/1 "Jakarta", system-ui, sans-serif; color: var(--muted); text-decoration: none; margin-left: 20px; }
+.site-header nav a:hover { color: var(--ink); }
+
+/* Headings */
+h1, h2, h3 { font-family: "Jakarta", system-ui, sans-serif; letter-spacing: -0.02em; line-height: 1.15; margin: 0; }
+h1 { font-weight: 700; font-size: clamp(34px, 5vw, 48px); text-wrap: balance; }
+h2 { font-weight: 700; font-size: clamp(26px, 4vw, 34px); }
+h3 { font-weight: 600; font-size: 19px; letter-spacing: -0.01em; }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; padding: 40px 0 72px; }
+.hero p.lead { font-size: 21px; color: var(--muted); margin: 22px 0 32px; max-width: 30em; }
+
+.phone {
+  justify-self: center;
+  width: min(300px, 78vw);
+  aspect-ratio: 1206 / 2622;
+  border-radius: 44px;
+  padding: 10px;
+  background: #15120F;
+  box-shadow: 0 30px 60px -20px rgba(42, 37, 31, 0.45), 0 0 0 1px rgba(0, 0, 0, 0.2);
+}
+.phone video, .phone img { width: 100%; height: 100%; display: block; border-radius: 35px; object-fit: cover; background: #F5EFE4; }
+
+.form-note { font: 14px/1.5 system-ui, sans-serif; color: var(--muted); margin: 12px 0 0; max-width: 460px; }
+
+/* Shelf divider, like the app's bookcase */
+.shelf { display: flex; align-items: flex-end; gap: 3px; height: 92px; padding: 0 12px; }
+.shelf span { display: block; width: var(--w); height: var(--h); background: var(--c); border-radius: 2px; box-shadow: inset -2px 0 0 rgba(0,0,0,0.18); }
+.board { height: 10px; border-radius: 2px; background: var(--board); box-shadow: 0 6px 12px -6px rgba(0,0,0,0.35); margin-bottom: 64px; }
+
+/* Features */
+.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; padding-bottom: 80px; }
+.features p { color: var(--muted); margin: 8px 0 0; }
+.tag { font: 700 11px/1 "Jakarta", system-ui, sans-serif; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); border: 1px solid currentColor; border-radius: 999px; padding: 3px 7px; margin-left: 6px; vertical-align: 3px; }
+
+/* Long-form pages (privacy, support) */
+.doc { padding: 24px 0 80px; }
+.doc h1 { font-size: clamp(32px, 5vw, 44px); margin-bottom: 8px; }
+.doc .updated { color: var(--muted); margin: 0 0 36px; font: 15px/1.5 system-ui, sans-serif; }
+.doc h2 { font-size: 22px; margin: 40px 0 10px; }
+.doc h3 { margin: 28px 0 6px; }
+.doc p, .doc li { margin: 0 0 12px; }
+.doc ul { padding-left: 22px; }
+.doc hr { border: 0; border-top: 1px solid var(--line); margin: 56px 0; }
+
+/* Footer */
+.site-footer { border-top: 1px solid var(--line); padding: 28px 0 40px; font: 15px/1.5 system-ui, sans-serif; color: var(--muted); }
+.site-footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: space-between; }
+.site-footer nav a { margin-right: 18px; text-decoration: none; }
+.site-footer nav a:hover { color: var(--ink); }
+
+@media (max-width: 820px) {
+  .hero { grid-template-columns: 1fr; gap: 44px; padding-top: 16px; }
+  .features { grid-template-columns: 1fr; gap: 28px; }
+}
+@media (max-width: 480px) {
+  body { font-size: 17px; }
+  .site-header nav a { margin-left: 14px; }
+}
